@@ -1,0 +1,81 @@
+.promo
+    height: 700px
+    box-shadow: 5px 15px 40px 0 rgba(11, 24, 97, 0.32)
+    margin-bottom: 39px
+    &__window
+        overflow: hidden
+        height: 100%
+        width: 100%
+        position: relative
+    &__wrapper
+        width: 400%
+        height: 100%
+        display: flex
+    &__slide
+        width: 1820px
+        border-radius: 20px
+        &.slide-bg
+            &_1
+                background: url('../img/promo_slider/slide_ship_1.jpg') center center / cover no-repeat
+            &_2
+                background: url('../img/promo_slider/slide_loader_2.jpg') center center / cover no-repeat
+            &_3
+                background: url('../img/promo_slider/slide_order_3.jpg') center center / cover no-repeat
+            &_4
+                background: url('../img/promo_slider/slide_track_4.jpg') center center / cover no-repeat
+    &__textblock
+        width: 463px
+        height: 309px
+    &__title
+        font-weight: 700
+        font-size: 56px
+        line-height: 126%
+        text-transform: uppercase
+        color: #fff
+        margin-top: 163px
+        margin-bottom: 8px
+    &__descr
+        font-weight: 400
+        font-size: 20px
+        line-height: 136%
+        color: #fff
+        margin-bottom: 37px
+    &__btn
+        width: 293px
+    &__next-arrow
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        right: 149px
+        cursor: pointer
+    &__prev-arrow
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        left: 149px
+        cursor: pointer
+    &__dots-wrapper
+        position: absolute
+        bottom: 43px
+        left: 50%
+        transform: translateX(-50%)
+        display: flex
+    &__dot
+        position: relative
+        width: 20px
+        height: 20px
+        margin: 0 7px
+        cursor: pointer
+        &::before
+            content: ''
+            position: absolute
+            width: 8px
+            height: 8px
+            top: 50%
+            left: 50%
+            border: 2px solid #fff
+            border-radius: 50%
+            transform: translate(-50%, -50%)
+        &.active
+            &::before
+                background-color: #fff

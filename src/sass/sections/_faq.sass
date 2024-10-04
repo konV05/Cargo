@@ -1,0 +1,73 @@
+.faq
+    min-height: 668px
+    margin-bottom: 100px
+    .title::before
+        background-color: var(--local-orange)
+    &__flex
+        display: grid
+        display: flex
+        justify-content: space-between
+    &__form
+        width: 390px
+        height: 553px
+        padding: 38px 40px
+        background-color: var(--local-dark-grey)
+        border-radius: 20px
+        box-shadow: var(--shadow)
+        input
+            margin-bottom: 14px
+            &.last-input
+                margin-bottom: 26px
+                height: 70px
+    &__header
+        font-weight: 700
+        font-size: 24px
+        line-height: 126%
+        color: #fff
+        margin-bottom: 8px
+    &__subheader
+        font-weight: 400
+        font-size: 17px
+        line-height: 126%
+        color: #fff
+        margin-bottom: 23px
+    &__btn
+        width: 310px
+    &__title
+        font-weight: 700
+        font-size: 18px
+        line-height: 125%
+        color: #fff
+    &__descr
+        font-weight: 400
+        font-size: 17px
+        line-height: 145%
+        color: var(--background-grey)
+    &__img
+        height: 27px
+        width: 27px
+    &__elem
+        border: 1px solid #3a444e
+        border-radius: 10px
+        width: 716px
+        height: 64px
+        display: grid
+        grid-template-columns: 583px 27px
+        align-items: center
+        overflow: hidden
+        padding: 18px 19px 19px 34px
+        justify-content: space-between
+        margin-bottom: 16px
+        cursor: pointer
+        &:last-child
+            margin-bottom: unset
+        &.active
+            height: 152px
+            background-color: #fff
+            .faq__title
+                color: var(--background-grey)
+            .faq__img
+                transform: rotate(-90deg)
+                svg path
+                    fill: var(--local-orange)
+                

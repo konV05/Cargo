@@ -1,0 +1,63 @@
+.services
+    min-height: 794px
+    margin-bottom: 61px
+    padding: 97px 0 60px 0
+    .title
+        margin-bottom: 10px
+        &::before
+            background-color: var(--local-orange)
+    &__prev-arrow
+        position: absolute
+        left: -91px
+        top: 50%
+        transform: translateY(-50%)
+        cursor: pointer
+    &__next-arrow
+        position: absolute
+        right: -91px
+        top: 50%
+        transform: translateY(-50%)
+        cursor: pointer
+    &__slider
+        height: 562px
+        width: 100%
+        position: relative
+    &__window
+        overflow-x: hidden
+        width: 100%
+        padding: 40px 0
+    &__field
+        width: 1530px
+        display: flex
+        justify-content: space-between
+    &__slide
+        width: 360px
+        height: 482px
+        border-radius: 20px
+        overflow: hidden
+        box-shadow: var(--shadow)
+        padding: 250px 23px 33px 30px
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        &.slide-bg
+            &_1
+                background: linear-gradient(0deg, rgba(4, 5, 17, 0.91) 0%, rgba(88, 88, 88, 0) 100%), url('../img/service_slider/service_slider_1.jpg') center center / cover no-repeat
+            &_2
+                background: linear-gradient(0deg, rgba(4, 5, 17, 0.91) 0%, rgba(88, 88, 88, 0) 100%), url('../img/service_slider/service_slider_2.jpg') center center / cover no-repeat
+            &_3
+                background: linear-gradient(0deg, rgba(4, 5, 17, 0.91) 0%, rgba(88, 88, 88, 0) 100%), url('../img/service_slider/service_slider_3.jpg') center center / cover no-repeat
+            &_4
+                background: linear-gradient(0deg, rgba(4, 5, 17, 0.91) 0%, rgba(88, 88, 88, 0) 100%), url('../img/service_slider/service_slider_4.jpg') center center / cover no-repeat
+    &__title
+        font-weight: 700
+        font-size: 22px
+        line-height: 125%
+        color: #fff
+    &__descr
+        font-weight: 400
+        font-size: 15px
+        line-height: 125%
+        color: #fff
+    &__btn
+        width: 153px

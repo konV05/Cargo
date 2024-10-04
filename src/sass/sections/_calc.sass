@@ -1,12 +1,29 @@
 .calc
     padding-top: 58px
+    min-height: 917px
     .title
         text-align-last: left
         margin-bottom: 62px
+        padding-bottom: 0
         &::before
             bottom: 22px
             left: 497px
             transform: unset
+    &.step-2
+        .calc__field
+            transform: translateX(-50%)
+        .calc__steps
+            &:nth-child(-n+2)
+                background-color: var(--local-green)
+                border: none
+    &.step-3
+        .calc__form
+            display: none
+        .title
+            padding-top: 52px
+            margin-bottom: 56px
+        .calc-thanks
+            display: block
     .container
         position: relative
     &__img
@@ -18,14 +35,14 @@
         width: 100%
     &__field
         width: 200%
-        display: flex
+        display: flex 
     &__form
         background-color: var(--local-dark-grey)
         border-radius: 20px
         width: 626px
         box-shadow: var(--shadow)
         position: relative
-        padding: 70px 0 41px 0
+        padding: 70px 0 41px 0      
     &__steps
         border-radius: 90px
         width: 60px
@@ -41,7 +58,8 @@
         display: flex
         align-items: center
         justify-content: center
-        &.active
+        transition: all 0.5s
+        &:first-child
             background-color: var(--local-green)
             border: none
         &-block
@@ -61,42 +79,47 @@
         grid-template-rows: repeat(3, 81px) 75px auto
         gap: 20px 30px
     &__input
-        border-radius: 10px
-        width: 100%
-        height: 56px
-        border: none
-        padding-left: 20px
-        font-weight: 400
-        font-size: 15px
-        line-height: 126%
-        &::placeholder
-            font-weight: 400
-            font-size: 15px
-            line-height: 126%
-            color: #cbcbcb
+        grid-row: 2 / 3
+        grid-column: 1 / 3
         &-wrapper
-            display: flex
-            flex-direction: column
-            justify-content: space-between
+            display: grid
+            grid-template-columns: repeat(2, auto)
+            grid-template-rows: 19px 56px
+            row-gap: 6px
             height: 100%
+            &.big
+                grid-column: 1 / 3
+        &-volume
+            text-align: right
+            font-weight: 400
+            font-size: 14px
+            line-height: 146%
+            text-decoration: underline
+            text-decoration-skip-ink: none
+            color: var(--local-orange)
+            cursor: pointer
+            &:active
+                color: #B16519
     &__label
         font-weight: 600
         font-size: 15px
         line-height: 126%
         color: #fff
     &__checkbox
-        // display: none
+        display: none
+        &-line
+            margin-bottom: 14px
+            &:last-child
+                margin-bottom: unset
+            & input:checked+label .calc__checkbox-fake svg
+                opacity: 1
         &-label
             font-weight: 600
             font-size: 15px
             line-height: 126%
             color: #fff
             display: flex
-            width: 100%
             align-items: center
-            margin-bottom: 14px
-            &:last-child
-                margin-bottom: unset
         &-wrapper
             display: flex
             flex-direction: column
@@ -107,10 +130,95 @@
             border-radius: 4px
             width: 24px
             height: 24px
+            margin-right: 9px
             display: flex
             justify-content: center
             align-items: center
-            margin-right: 9px
-        &-checked
-            opacity: 0
-            transition: all 0.5s
+            svg
+                opacity: 0
+                transition: all 0.2s 
+    &__dropbox
+        position: absolute
+        width: 100%
+        height: 43px
+        bottom: 0
+        opacity: 0
+        cursor: pointer
+        &-wrapper
+            grid-column: 1 / 3
+            position: relative
+            display: grid
+            grid-template-columns: repeat(2, auto)
+            grid-template-rows: 14px 43px
+            row-gap: 18px
+            justify-content: space-between
+        &-label
+            grid-column: 1 / 3
+            border: 1px dashed rgba(255, 255, 255, 0.26)
+            border-radius: 10px
+            width: 100%
+            height: 100%
+            font-weight: 400
+            font-size: 15px
+            line-height: 126%
+            color: #fff
+            display: flex
+            align-items: center
+            justify-content: center
+        &-file
+            font-weight: 400
+            font-size: 15px
+            line-height: 126%
+            color: #fff
+        &-delete
+            width: 82px
+            font-weight: 400
+            font-size: 13px
+            line-height: 126%
+            text-decoration: underline
+            text-decoration-skip-ink: none
+            color: #e53535
+            cursor: pointer
+            text-align: right
+    &__textarea
+        resize: none
+        height: 147px
+        padding-top: 19px
+        &-wrapper
+            grid-column: 1 / 3
+            grid-row: 3 / 5
+            padding-bottom: 4px
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+    &-thanks
+        display: none
+        &__img
+            margin-bottom: 34px
+        &__title
+            font-weight: 700
+            font-size: 32px
+            line-height: 126%
+            color: #fff
+            margin-bottom: 10px
+        &__subtitle
+            font-weight: 400
+            font-size: 18px
+            line-height: 126%
+            color: #fff
+            margin-bottom: 37px
+        &__list-title
+            font-weight: 700
+            font-size: 20px
+            line-height: 144%
+            color: #fff
+            margin-bottom: 15px
+        &__item
+            font-weight: 400
+            font-size: 18px
+            line-height: 144%
+            color: #fff
+            margin-left: 20px
+            a
+              color: #fff
+              text-decoration: none  

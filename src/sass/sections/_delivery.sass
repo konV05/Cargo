@@ -1,0 +1,80 @@
+.delivery
+    min-height: 597px
+    margin-bottom: 100px
+    &__slider
+        height: 482px
+        width: 100%
+        position: relative
+    &__window
+        overflow: hidden
+        width: 100%
+    &__field
+        width: 1920px
+        display: flex
+        justify-content: space-between
+    &__slide
+        width: 360px
+        background-color: var(--local-dark-grey)
+        border-radius: 20px
+        overflow: hidden
+        box-shadow: 5px 15px 40px 0 rgba(30, 35, 66, 0.15)
+    &__img
+        margin-bottom: 27px
+    &__title
+        font-weight: 700
+        font-size: 22px
+        line-height: 125%
+        text-align: center
+        color: #fff
+        margin-bottom: 13px
+    &__wrapper
+        width: 212px
+        height: 22px
+        margin: 0 auto
+        display: flex
+        justify-content: space-between
+        margin-bottom: 15px
+    &__time-and-weight
+        display: flex
+        &-text
+            font-weight: 400
+            font-size: 16px
+            line-height: 125%
+            text-align: center
+            color: #fff
+            margin-left: 10px
+    &__price
+        height: 56px
+        font-weight: 400
+        line-height: 125%
+        text-align: center
+        color: #fff
+        margin-bottom: 18px
+        font-size: 45px
+        span
+            &.from
+                color: #a3a3a3
+                font-size: 22px
+            &.number
+                font-weight: 700
+            &.dollar
+                font-size: 22px
+    &__btn
+        width: 153px
+        &-wrapper
+            display: flex
+            justify-content: space-between
+            padding: 0 20px
+            margin-bottom: 27px
+    &__prev-arrow
+        position: absolute
+        left: -91px
+        top: 50%
+        transform: translateY(-50%)
+        cursor: pointer
+    &__next-arrow
+        position: absolute
+        right: -91px
+        top: 50%
+        transform: translateY(-50%)
+        cursor: pointer

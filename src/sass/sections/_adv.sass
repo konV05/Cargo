@@ -31,3 +31,40 @@
         line-height: 125%
         text-align: center
         color: #fff
+    &__slider
+        display: none
+        height: 235px
+        width: 263px
+        margin: 0 auto
+        flex-direction: column
+        justify-content: space-between
+    &__window
+        width: 100%
+        height: 203px
+        overflow: hidden
+    &__field
+        width: 2104px
+        display: flex
+    &__dots
+        position: relative
+        width: 20px
+        height: 20px
+        cursor: pointer
+        &::before
+            box-sizing: border-box
+            content: ''
+            position: absolute
+            width: 8px
+            height: 8px
+            top: 50%
+            left: 50%
+            border: 2px solid #fff
+            border-radius: 50%
+            transform: translate(-50%, -50%)
+        &.active
+            &::before
+                background-color: #fff
+        &-wrapper
+            display: flex
+            justify-content: space-between
+            height: 20px

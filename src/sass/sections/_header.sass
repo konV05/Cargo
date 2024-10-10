@@ -1,9 +1,15 @@
 .header
+    position: fixed
     width: 100%
-    display: flex
-    justify-content: space-between
-    align-items: center
-    margin: 25px 0
+    z-index: 2
+    top: 0
+    left: 0
+    &__wrapper
+        width: 100%
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin: 25px 0
     &__link
         font-weight: 400
         font-size: 16px
@@ -16,3 +22,30 @@
             width: 602px
     &__btn
         width: 171px
+    &__hamburger
+        display: none
+        position: relative
+        width: 40px
+        height: 40px
+        flex-direction: column
+        justify-content: space-between
+        padding: 8px 6px
+        span
+            display: block
+            height: 2px
+            background-color: #fff
+        &.active
+            // display: none
+            span
+                display: none
+                &:first-child
+                    display: block
+                    transform: rotate(45deg) translateY(2px)
+                    position: relative
+                    top: 50%
+                &:last-child
+                    display: block
+                    transform: rotate(-45deg) translateY(-1px)
+                    position: relative
+                    top: 50%
+                    

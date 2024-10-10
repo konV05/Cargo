@@ -1,0 +1,132 @@
+.modal
+    width: 100vw
+    height: 100vh
+    position: fixed
+    top: 0
+    left: 0
+    background-color: rgba(0, 0, 0, .7)
+    display: none
+    justify-content: center
+    align-items: center
+    z-index: 3
+    &.calc
+        display: flex
+        .modal-calc
+            display: block
+    &.request
+        display: flex
+        .modal-request
+            display: block
+    &.menu
+        display: block
+        .modal-menu
+            display: block
+    &__header
+        font-weight: 700
+        font-size: 24px
+        line-height: 126%
+        text-transform: uppercase
+        color: #fff
+        margin-bottom: 13px
+    &__subheader
+        font-weight: 400
+        font-size: 17px
+        line-height: 126%
+        color: #fff
+        margin-bottom: 27px
+    &__label
+        font-weight: 600
+        font-size: 15px
+        line-height: 126%
+        color: #fff
+    &-calc
+        display: none
+        width: 354px
+        height: 627px
+        background-color: var(--local-dark-grey)
+        box-shadow: 14px 22px 40px 0 rgba(30, 35, 66, 0.28)
+        border-radius: 20px
+        padding: 48px 50px 41px 50px
+        position: relative
+        &__close
+            position: absolute
+            right: 17px
+            top: 17px
+            cursor: pointer
+        &__elem
+            margin-bottom: 20px
+            height: 81px
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            &:last-child
+                margin-bottom: 0
+            &:nth-child(4)
+                margin-bottom: 33px
+        &__select
+            font-weight: 400
+            font-size: 18px
+            line-height: 126%
+            color: #212121
+    &-request
+        display: none
+        width: 626px
+        height: 657px
+        background-color: var(--local-dark-grey)
+        box-shadow: 14px 22px 40px 0 rgba(30, 35, 66, 0.28)
+        border-radius: 20px
+        padding: 48px 50px 41px 50px
+        position: relative
+        &__form
+            display: grid
+            grid-template-columns: repeat(2, 248px)
+            grid-template-rows: 81px 81px 152px auto
+            gap: 20px 30px
+        &__close
+            position: absolute
+            right: 17px
+            top: 17px
+            cursor: pointer
+        &__elem
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            &.big
+                grid-column: 1 / 3
+            &:last-child
+                margin-top: 15px
+        &__textarea
+            height: 99px
+        &__hint
+            font-weight: 400
+            font-size: 13px
+            line-height: 126%
+            color: #fff
+            margin-top: 6px
+        &__btn
+            width: 253px
+    &-menu
+        position: absolute
+        top: 100px
+        right: 0px
+        width: 375px
+        background-color: var(--local-dark-grey)
+        padding: 37px 0 60px 0
+        border-radius: 20px 0 0 20px
+        &__link
+            font-weight: 400
+            font-size: 24px
+            line-height: 222%
+            text-align: center
+            color: #fff
+            text-decoration: none
+            &-wrapper
+                display: flex
+                flex-direction: column
+                align-items: center
+                justify-content: space-between
+                height: 309px
+        &__btn
+            display: none
+            width: 295px
+            margin: 34px auto 0 auto

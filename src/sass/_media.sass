@@ -1,0 +1,323 @@
+@media (max-width: 1405px)
+    .services
+        &__slider
+            --arrow-gap: -50px
+@media (max-width: 1405px)
+    .services
+        &__slider
+            --arrow-gap: -70px
+
+@media (max-width: 1200px)
+    .container
+        max-width: 960px
+    .header
+        min-width: 893px
+        &__link-wrapper
+            width: 470px
+    .promo
+        & .container 
+            max-width: 630px
+            margin: 0 auto
+        &__prev-arrow
+            left: 50px
+        &__next-arrow
+            right: 50px
+    .calc
+        min-height: 837px
+        &__img
+            bottom: -50px
+            right: -48px
+            top: unset
+            width: 460px
+        &__form
+            width: 530px
+        &__grid
+            width: 530px
+            padding: 0 35px
+            gap: 20px
+            grid-template-columns: repeat(2, 220px)
+    .adv
+        &__grid
+            grid-template-columns: repeat(auto-fit, 263px)
+            justify-content: space-between
+    .delivery, .services
+        &__slider
+            --on-screen-slides: 2
+            margin: 0 auto
+    .services
+        &__slider
+            --arrow-gap: -65px
+    .about
+        &__text-block
+            width: 470px
+        &__img
+            left: 375px
+            width: 550px
+            top: 65%
+            transform: translateY(-50%)
+    .faq
+        &__elem
+            height: 79px
+            &.active
+                height: 190px
+    .reg
+        &__grid
+            grid-template-columns: repeat(2, 435px)
+            grid-template-rows: 535px 406px
+        &__text:last-child
+            padding: 0
+    .footer
+        &__wrapper
+            padding: 40px 0 59px 0
+        &-menu
+            width: 600px
+            &__column
+                width: 160px
+
+@media (max-width: 992px)
+    body
+        padding: 0 35px
+    .container
+        max-width: 720px
+    .header
+        min-width: 700px
+        &__logo
+            height: 35px
+        &__link-wrapper
+            width: 305px
+            flex-wrap: wrap
+    .promo
+        &__prev-arrow
+            display: none
+        &__next-arrow
+            display: none
+    .calc
+        margin-bottom: 60px
+        &__img
+            display: none
+        &__form
+            width: 626px
+        &__grid
+            width: 626px
+            padding: 0 50px
+            gap: 20px 30px
+            grid-template-columns: repeat(2, 248px)
+    .adv
+        &__grid
+            grid-template-columns: repeat(auto-fit, 212px)
+    .delivery, .services
+        &__prev-arrow
+            display: none
+        &__next-arrow
+            display: none
+        &__slider
+            --slide-gap: 20px
+            --slide-width: 340px
+        &__dots-wrapper
+            display: flex
+    .delivery__btn
+        width: 140px
+    .about
+        &__wrapper
+            display: flex
+            flex-direction: column
+            align-items: center
+        &__text-block
+            padding: 0
+            width: 555px
+        &__img
+            margin-top: 30px
+            position: static
+            transform: unset
+    .faq
+        &__flex
+            display: block
+        &__wrapper
+            margin-bottom: 35px
+        &__form
+            margin: 0 auto
+            width: 500px
+    .reg
+        &__grid
+            grid-template-columns: 100%
+            grid-template-rows: repeat(4, auto)
+            row-gap: 36px
+            padding: 0 20px
+        &__text:first-child
+            grid-row: 2 / 3
+    .footer-menu
+        display: none
+
+@media (max-width: 768px)
+    body
+        padding: 0 10px
+    .container
+        max-width: 540px
+    .header
+        min-width: 557px
+        &__logo
+            height: unset
+        &__link-wrapper
+            display: none
+        &__hamburger
+            display: flex
+            &.active
+                display: block
+    .promo
+        & .container 
+            max-width: 100%
+        &__textblock
+            margin: 0 auto
+            text-align: center
+        &__btn
+            margin: 0 auto
+    .calc
+        & .title
+            text-align-last: center
+            font-size: 30px
+            margin-bottom: 62px
+            padding-bottom: 21px
+            &::before
+                bottom: 0
+                left: 50%
+                transform: translateX(-50%)
+        &__form
+            width: 100%
+        &__grid
+            width: 50%
+            padding: 0 30px
+            gap: 20px 30px
+            grid-template-columns: repeat(2, 1fr)
+    .adv
+        &__grid
+            grid-template-columns: repeat( auto-fit, minmax(210px, 250px) )
+    .delivery, .services
+        &__slider
+            --on-screen-slides: 1
+            --slide-width: 360px
+            --slide-gap: 30px
+    .delivery__btn
+        width: 153px
+    .about
+        &__text-block
+            width: 100%
+        &__img
+            width: 100%
+    
+
+@media (max-width: 576px)
+    body
+        padding: 0
+    .container
+        max-width: 100%
+        padding: 0 20px
+    .title
+        font-size: 24px
+        padding-bottom: 25px
+        margin-bottom: 45px
+    .section
+        border-radius: 0
+    .header
+        width: 100%
+        min-width: unset
+        &__btn
+            display: none
+        &__logo
+            height: 35px
+    .promo
+        height: 650px
+        &__slide
+            border-radius: 0
+        &__textblock
+            width: 335px
+            height: 220px
+        &__title
+            font-size: 32px
+        &__descr
+            font-size: 16px
+    .calc
+        & .title
+            margin-bottom: 54px
+            font-size: 24px
+            padding-bottom: 25px
+        &__steps-block
+            left: 0
+            width: 100%
+            justify-content: space-around
+        &__grid
+            grid-template-columns: 275px
+            width: 50%
+            padding: 0 30px
+            gap: 20px
+            grid-template-rows: repeat(4, 81px) 68px 81px 75px 68px
+        &__dropbox-wrapper
+            grid-column: unset
+        &__textarea-wrapper
+            grid-column: unset
+        &__input-wrapper.big
+            grid-column: unset
+        &__btn
+            grid-row: 8 / 9
+            &-small
+                grid-row: 7 / 8
+                width: 100%
+        &-thanks
+            &__title
+                font-size: 24px
+            &__subtitle
+                font-size: 16px
+            &__item
+                font-size: 16px
+                margin-bottom: 6px
+    .adv
+        min-height: 479px
+        padding: 55px 0 60px 0
+        &__grid
+            display: none
+        &__elem
+            width: 263px
+        &__slider
+            display: flex
+    .delivery, .services
+        &__slider
+            --slide-width: 335px
+            --slide-gap: 20px
+    .delivery__btn
+            width: 138px
+    .services
+        margin-bottom: 54px
+    .about
+        .title
+            text-align: center
+            &::before
+                left: 50%
+                transform: translateX(-50%)
+        &__text
+            font-size: 16px
+        &__img
+            margin-top: 25px
+    .faq
+        &__wrapper
+            margin-bottom: 28px
+        &__title
+            font-size: 16px
+        &__descr
+            font-size: 14px
+        &__form
+            width: 335px
+            padding: 38px 20px
+            text-align: center
+        &__btn
+            width: 295px
+    .reg__text
+        font-size: 16px
+    .footer
+        &__info
+            margin: 0 auto
+        &__logo
+            display: block
+            margin: 0 auto 28px auto
+        &__address
+            text-align: center
+        &__media-wrapper
+            margin: 0 auto

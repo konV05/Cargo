@@ -7,19 +7,26 @@
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-    <div class="container">
-        <nav class="header">
-            <img src="icons/logo.svg" alt="logo" class="header__logo">
-            <div class="header__link-wrapper">
-                <a href="#" class="header__link">Цены и сроки</a>
-                <a href="#" class="header__link">Услуги</a>
-                <a href="#" class="header__link">О компании</a>
-                <a href="#" class="header__link">Контакты</a>
-                <a href="#" class="header__link">Оформить груз</a>
+    <!-- <nav class="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <img src="icons/logo.svg" alt="logo" class="header__logo">
+                <div class="header__link-wrapper">
+                    <a href="#delivery" class="header__link">Цены и сроки</a>
+                    <a href="#services" class="header__link">Услуги</a>
+                    <a href="#about" class="header__link">О компании</a>
+                    <a href="#" class="header__link">Контакты</a>
+                    <a href="#reg" class="header__link">Оформить груз</a>
+                </div>
+                <button class="header__btn btn fz-15">Оставить заявку</button>
+                <div class="header__hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-            <button class="header__btn btn fz-15">Оставить заявку</button>
-        </nav>
-    </div>
+        </div>
+    </nav> -->
 
     <section class="promo">
         <div class="promo__window">
@@ -97,7 +104,8 @@
             </div>
         </div>
     </section>
-    <section class="calc step-2">
+
+    <section class="calc step-1">
         <div class="container">
                 <div class="title">Получить рассчет стоимости<br>доставки вашего груза</div>
                 <form action="" class="calc__form">
@@ -110,26 +118,26 @@
                         <div class="calc__field">
                             <div class="calc__grid">
                                 <div class="calc__input-wrapper">
-                                    <label for="category" class="calc__label">Категория товара:</label>
-                                    <input required placeholder="Категория товара" type="text" class="calc__input input" id="category" name="category">
+                                    <label for="calc_category" class="calc__label">Категория товара:</label>
+                                    <input required placeholder="Категория товара" type="text" class="calc__input input" id="calc_category" name="category">
                                 </div>
                                 <div class="calc__input-wrapper">
-                                    <label for="price" class="calc__label">Стоимость груза:</label>
-                                    <input required placeholder="Введите стоимость" type="number" class="calc__input input" id="price" name="price">
+                                    <label for="calc_price" class="calc__label">Стоимость груза:</label>
+                                    <input required placeholder="Введите стоимость" type="number" class="calc__input input" id="calc_price" name="price">
                                 </div>
                                 <div class="calc__input-wrapper">
-                                    <label for="weight" class="calc__label">Вес груза (кг):</label>
-                                    <input required placeholder="Введите вес" type="number" class="calc__input input" id="weight" name="weight">
+                                    <label for="calc_weight" class="calc__label">Вес груза (кг):</label>
+                                    <input required placeholder="Введите вес" type="number" class="calc__input input" id="calc_weight" name="weight">
                                 </div>
                                 <div class="calc__input-wrapper">
-                                    <label for="volume" class="calc__label">Объем груза (м3):</label>
+                                    <label for="calc_volume" class="calc__label">Объем груза (м3):</label>
                                     <div class="calc__input-volume">Рассчитать</div>
-                                    <input required placeholder="Введите объем" type="number" class="calc__input input" id="volume" name="volume">
+                                    <input required placeholder="Введите объем" type="number" class="calc__input input" id="calc_volume" name="volume">
                                 </div>
                                 <div class="calc__checkbox-wrapper">
                                     <div class="calc__checkbox-line">
-                                        <input type="checkbox" class="calc__checkbox" id="insurance" name="insurance">
-                                        <label for="insurance" class="calc__checkbox-label">
+                                        <input type="checkbox" class="calc__checkbox" id="calc_insurance" name="insurance">
+                                        <label for="calc_insurance" class="calc__checkbox-label">
                                             <div class="calc__checkbox-fake">
                                                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M4.31726 10.3171C4.07378 10.3171 3.83005 10.2243 3.64431 10.0384L0.278815 6.67291C-0.0929384 6.30116 -0.0929384 5.69853 0.278815 5.32677C0.650569 4.95502 1.2532 4.95502 1.62495 5.32677L4.31726 8.01907L10.3751 1.96139C10.7468 1.58975 11.3496 1.58964 11.7211 1.96139C12.0929 2.33314 12.0929 2.93591 11.7211 3.30753L4.99034 10.0384C4.80446 10.2242 4.56084 10.3171 4.31726 10.3171Z" fill="#282B38" />
@@ -138,8 +146,8 @@
                                         Страховка</label>
                                     </div>
                                     <div class="calc__checkbox-line">
-                                        <input type="checkbox" class="calc__checkbox" id="customs" name="customs">
-                                        <label for="customs" class="calc__checkbox-label">
+                                        <input type="checkbox" class="calc__checkbox" id="calc_customs" name="customs">
+                                        <label for="calc_customs" class="calc__checkbox-label">
                                             <div class="calc__checkbox-fake">
                                                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M4.31726 10.3171C4.07378 10.3171 3.83005 10.2243 3.64431 10.0384L0.278815 6.67291C-0.0929384 6.30116 -0.0929384 5.69853 0.278815 5.32677C0.650569 4.95502 1.2532 4.95502 1.62495 5.32677L4.31726 8.01907L10.3751 1.96139C10.7468 1.58975 11.3496 1.58964 11.7211 1.96139C12.0929 2.33314 12.0929 2.93591 11.7211 3.30753L4.99034 10.0384C4.80446 10.2242 4.56084 10.3171 4.31726 10.3171Z" fill="#282B38" />
@@ -149,14 +157,14 @@
                                     </div>
                                 </div>
                                 <div class="calc__input-wrapper">
-                                    <label for="code" class="calc__label">Код ТН ВЭД:</label>
-                                    <input required placeholder="Введите код" type="text" class="calc__input input" name="code" id="code">
+                                    <label for="calc_code" class="calc__label">Код ТН ВЭД:</label>
+                                    <input required placeholder="Введите код" type="text" class="calc__input input" name="code" id="calc_code">
                                 </div>
                                 <div class="calc__dropbox-wrapper">
                                     <div class="calc__dropbox-file">фотография.jpeg</div>
-                                    <input type="file" class="calc__dropbox" id="photo" name="photo" accept="image/png, image/jpeg">
+                                    <input type="file" class="calc__dropbox" id="calc_photo" name="photo" accept="image/png, image/jpeg">
                                     <div class="calc__dropbox-delete">Удалить фото</div>
-                                    <label for="photo" class="calc__dropbox-label">Загрузить фото товара</label>
+                                    <label for="calc_photo" class="calc__dropbox-label">Загрузить фото товара</label>
                                 </div>
                                 <button class="calc__btn btn fz-16 btn_arrow">Следующий шаг
                                     <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -166,22 +174,22 @@
                             </div>
                             <div class="calc__grid">
                                 <div class="calc__input-wrapper big">
-                                    <label for="name" class="calc__label">Имя:</label>
-                                    <input required placeholder="Ваше имя" type="text" class="calc__input input" id="name" name="name">
+                                    <label for="calc_name" class="calc__label">Имя:</label>
+                                    <input required placeholder="Ваше имя" type="text" class="calc__input input" id="calc_name" name="name">
                                 </div>
                                 <div class="calc__input-wrapper">
-                                    <label for="phone" class="calc__label">Номер телефона:</label>
-                                    <input required placeholder="+7 (___) ___ - __ - __" type="tel" class="calc__input input" id="phone" name="phone">
+                                    <label for="calc_phone" class="calc__label">Номер телефона:</label>
+                                    <input required placeholder="+7 (___) ___ - __ - __" type="tel" class="calc__input input" id="calc_phone" name="phone">
                                 </div>
                                 <div class="calc__input-wrapper">
-                                    <label for="email" class="calc__label">Email:</label>
-                                    <input required placeholder="Введите e-mail" type="email" class="calc__input input" id="email" name="email">
+                                    <label for="calc_email" class="calc__label">Email:</label>
+                                    <input required placeholder="Введите e-mail" type="email" class="calc__input input" id="calc_email" name="email">
                                 </div>
                                 <div class="calc__textarea-wrapper">
-                                    <label for="comment" class="calc__label">Комментарий:</label>
-                                    <textarea placeholder="Подробности о товаре, описание, количество" name="comment" id="comment" class="calc__textarea input"></textarea>
+                                    <label for="calc_comment" class="calc__label">Комментарий:</label>
+                                    <textarea placeholder="Подробности о товаре, описание, количество" name="comment" id="calc_comment" class="calc__textarea input"></textarea>
                                 </div>
-                                <button class="calc__btn btn fz-16 transparent">Назад</button>
+                                <button class="calc__btn-small btn fz-16 transparent">Назад</button>
                                 <button class="calc__btn btn fz-16 btn_arrow">Следующий шаг
                                     <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M0.421875 13.5C0.421875 6.27539 6.27539 0.421875 13.5 0.421875C20.7246 0.421875 26.5781 6.27539 26.5781 13.5C26.5781 20.7246 20.7246 26.5781 13.5 26.5781C6.27539 26.5781 0.421875 20.7246 0.421875 13.5ZM13.5 24.8906C19.7596 24.8906 24.8906 19.8229 24.8906 13.5C24.8906 7.24043 19.8229 2.10938 13.5 2.10938C7.24043 2.10938 2.10938 7.17715 2.10938 13.5C2.10938 19.7596 7.17715 24.8906 13.5 24.8906ZM14.1592 20.0127L20.2289 13.9482C20.4768 13.7004 20.4768 13.2996 20.2289 13.0518L14.1592 6.9873C13.9113 6.73945 13.5105 6.73945 13.2627 6.9873L12.8988 7.35117C12.651 7.59902 12.651 8.01035 12.9094 8.25293L17.4182 12.6035H7.38281C7.03477 12.6035 6.75 12.8883 6.75 13.2363V13.7637C6.75 14.1117 7.03477 14.3965 7.38281 14.3965H17.4182L12.9041 18.7471C12.651 18.9949 12.6457 19.401 12.8936 19.6488L13.2574 20.0127C13.5105 20.2605 13.9113 20.2605 14.1592 20.0127Z" fill="#B26519" />
@@ -195,7 +203,7 @@
                     <div class="calc-thanks__img">
                         <svg width="112" height="112" viewBox="0 0 112 112" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M80.7546 38.2308C82.4636 39.9398 82.4636 42.7101 80.7546 44.4182L51.4045 73.7692C49.6956 75.4773 46.9261 75.4773 45.2172 73.7692L31.2454 59.7965C29.5364 58.0884 29.5364 55.3181 31.2454 53.61C32.9535 51.901 35.7238 51.901 37.4319 53.61L48.3104 64.4885L74.5673 38.2308C76.2762 36.5227 79.0465 36.5227 80.7546 38.2308ZM112 56C112 86.954 86.9497 112 56 112C25.046 112 0 86.9497 0 56C0 25.046 25.0503 0 56 0C86.954 0 112 25.0503 112 56ZM103.25 56C103.25 29.8824 82.1141 8.75 56 8.75C29.8824 8.75 8.75 29.8859 8.75 56C8.75 82.1176 29.8859 103.25 56 103.25C82.1176 103.25 103.25 82.1141 103.25 56Z" fill="#89C249" />
-                          </svg>
+                        </svg>
                     </div>
                     <div class="calc-thanks__title">Спасибо за заявку!</div>
                     <div class="calc-thanks__subtitle">Мы обязатальено свяжемся с вами.</div>
@@ -263,10 +271,74 @@
                     <div class="adv__descr">Упаковка, переупаковка, паллетирование груза к международной перевозке</div>
                 </div>
             </div>
+            <div class="adv__slider">
+                <div class="adv__window">
+                    <div class="adv__field">
+                        <div class="adv__elem">
+                            <div class="adv__outer-circle">
+                                <div class="adv__inner-circle"><img src="icons/adv-icons/adv_icon_1.svg" alt="" class="adv__icon"></div>
+                            </div>
+                            <div class="adv__descr">Таможенное<br>оформление груза</div>
+                        </div>
+                        <div class="adv__elem">
+                            <div class="adv__outer-circle">
+                                <div class="adv__inner-circle"><img src="icons/adv-icons/adv_icon_2.svg" alt="" class="adv__icon"></div>
+                            </div>
+                            <div class="adv__descr">Страховка груза</div>
+                        </div>
+                        <div class="adv__elem">
+                            <div class="adv__outer-circle">
+                                <div class="adv__inner-circle"><img src="icons/adv-icons/adv_icon_3.svg" alt="" class="adv__icon"></div>
+                            </div>
+                            <div class="adv__descr">Проверка<br>товара на брак</div>
+                        </div>
+                        <div class="adv__elem">
+                            <div class="adv__outer-circle">
+                                <div class="adv__inner-circle"><img src="icons/adv-icons/adv_icon_4.svg" alt="" class="adv__icon"></div>
+                            </div>
+                            <div class="adv__descr">Доставка<br>в любой город РФ</div>
+                        </div>
+                        <div class="adv__elem">
+                            <div class="adv__outer-circle">
+                                <div class="adv__inner-circle"><img src="icons/adv-icons/adv_icon_5.svg" alt="" class="adv__icon"></div>
+                            </div>
+                            <div class="adv__descr">Консолидация<br>на складе</div>
+                        </div>
+                        <div class="adv__elem">
+                            <div class="adv__outer-circle">
+                                <div class="adv__inner-circle"><img src="icons/adv-icons/adv_icon_6.svg" alt="" class="adv__icon"></div>
+                            </div>
+                            <div class="adv__descr">Ответственное<br>хранение груза</div>
+                        </div>
+                        <div class="adv__elem">
+                            <div class="adv__outer-circle">
+                                <div class="adv__inner-circle"><img src="icons/adv-icons/adv_icon_7.svg" alt="" class="adv__icon"></div>
+                            </div>
+                            <div class="adv__descr">Помощь<br>в оплате товара</div>
+                        </div>
+                        <div class="adv__elem">
+                            <div class="adv__outer-circle">
+                                <div class="adv__inner-circle"><img src="icons/adv-icons/adv_icon_8.svg" alt="" class="adv__icon"></div>
+                            </div>
+                            <div class="adv__descr">Упаковка, переупаковка, паллетирование груза к международной перевозке</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="adv__dots-wrapper">
+                    <div class="adv__dots"></div>
+                    <div class="adv__dots"></div>
+                    <div class="adv__dots"></div>
+                    <div class="adv__dots"></div>
+                    <div class="adv__dots"></div>
+                    <div class="adv__dots"></div>
+                    <div class="adv__dots"></div>
+                    <div class="adv__dots"></div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="delivery">
+    <section class="delivery" id="delivery">
        <div class="container">
             <div class="title">Варианты доставки грузов из Китая</div>
             <div class="delivery__slider">
@@ -379,11 +451,18 @@
                         </div>
                     </div>
                 </div>
+                <div class="delivery__dots-wrapper">
+                    <div class="delivery__dots"></div>
+                    <div class="delivery__dots"></div>
+                    <div class="delivery__dots"></div>
+                    <div class="delivery__dots"></div>
+                    <div class="delivery__dots"></div>
+                </div>
             </div>
        </div>
     </section>
 
-    <section class="services section">
+    <section class="services section" id="services">
         <div class="container">
             <div class="title">Услуги</div>
             <div class="services__slider">
@@ -421,11 +500,17 @@
                         </div>
                     </div>
                 </div>
+                <div class="delivery__dots-wrapper">
+                    <div class="delivery__dots"></div>
+                    <div class="delivery__dots"></div>
+                    <div class="delivery__dots"></div>
+                    <div class="delivery__dots"></div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="about">
+    <section class="about" id="about">
         <div class="container">
             <div class="about__wrapper">
                 <div class="about__text-block">
@@ -517,7 +602,7 @@
         </div>
     </section>
 
-    <section class="reg section">
+    <section class="reg section" id="reg">
         <div class="container">
             <div class="title">Готовы к сотрудничеству?<br>
                 <span class="subtitle">Зарегистрируйте груз!</span>
@@ -599,5 +684,95 @@
             </div>
         </div>
     </footer>
+
+    <div class="modal">
+        <div class="modal-calc">
+            <div class="modal-calc__close">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.69099 6.5001L12.7529 1.4379C13.0824 1.10862 13.0824 0.576231 12.7529 0.246956C12.4237 -0.0823187 11.8913 -0.0823187 11.562 0.246956L6.49992 5.30915L1.43798 0.246956C1.10856 -0.0823187 0.576335 -0.0823187 0.247067 0.246956C-0.0823556 0.576231 -0.0823556 1.10862 0.247067 1.4379L5.30901 6.5001L0.247067 11.5623C-0.0823556 11.8916 -0.0823556 12.424 0.247067 12.7532C0.411161 12.9175 0.62692 13 0.842525 13C1.05813 13 1.27374 12.9175 1.43798 12.7532L6.49992 7.69104L11.562 12.7532C11.7263 12.9175 11.9419 13 12.1575 13C12.3731 13 12.5887 12.9175 12.7529 12.7532C13.0824 12.424 13.0824 11.8916 12.7529 11.5623L7.69099 6.5001Z" fill="#7E839A" />
+                </svg>
+            </div>
+            <div class="modal__header">Рассчитать объем</div>
+            <form action="" class="modal-calc__form">
+                <div class="modal-calc__elem">
+                    <label for="modal-calc__unit" class="modal__label">Единица измеренчя:</label>
+                    <select name="unit" id="modal-calc__unit" class="input modal-calc__select">
+                        <option selected value="1">метр</option>
+                        <option value="0,01">сантиметр</option>
+                        <option value="0,0254">дюйм</option>
+                        <option value="0,3048">фут</option>
+                    </select>
+                </div>
+                <div class="modal-calc__elem">
+                    <label for="" class="modal__label">Длина:</label>
+                    <input type="number" class="input modal-calc__input">
+                </div>
+                <div class="modal-calc__elem">
+                    <label for="" class="modal__label">Ширина:</label>
+                    <input type="number" class="input modal-calc__input">
+                </div>
+                <div class="modal-calc__elem">
+                    <label for="" class="modal__label">Высота:</label>
+                    <input type="number" class="input modal-calc__input">
+                </div>
+                <div class="modal-calc__elem">
+                    <button class="modal-calc__btn btn fz-16 btn_arrow">Рассчитать 
+                        <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.421875 13.5C0.421875 6.27539 6.27539 0.421875 13.5 0.421875C20.7246 0.421875 26.5781 6.27539 26.5781 13.5C26.5781 20.7246 20.7246 26.5781 13.5 26.5781C6.27539 26.5781 0.421875 20.7246 0.421875 13.5ZM13.5 24.8906C19.7596 24.8906 24.8906 19.8229 24.8906 13.5C24.8906 7.24043 19.8229 2.10938 13.5 2.10938C7.24043 2.10938 2.10938 7.17715 2.10938 13.5C2.10938 19.7596 7.17715 24.8906 13.5 24.8906ZM14.1592 20.0127L20.2289 13.9482C20.4768 13.7004 20.4768 13.2996 20.2289 13.0518L14.1592 6.9873C13.9113 6.73945 13.5105 6.73945 13.2627 6.9873L12.8988 7.35117C12.651 7.59902 12.651 8.01035 12.9094 8.25293L17.4182 12.6035H7.38281C7.03477 12.6035 6.75 12.8883 6.75 13.2363V13.7637C6.75 14.1117 7.03477 14.3965 7.38281 14.3965H17.4182L12.9041 18.7471C12.651 18.9949 12.6457 19.401 12.8936 19.6488L13.2574 20.0127C13.5105 20.2605 13.9113 20.2605 14.1592 20.0127Z" fill="#B26519" />
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="modal-request">
+            <div class="modal-request__close">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.69099 6.5001L12.7529 1.4379C13.0824 1.10862 13.0824 0.576231 12.7529 0.246956C12.4237 -0.0823187 11.8913 -0.0823187 11.562 0.246956L6.49992 5.30915L1.43798 0.246956C1.10856 -0.0823187 0.576335 -0.0823187 0.247067 0.246956C-0.0823556 0.576231 -0.0823556 1.10862 0.247067 1.4379L5.30901 6.5001L0.247067 11.5623C-0.0823556 11.8916 -0.0823556 12.424 0.247067 12.7532C0.411161 12.9175 0.62692 13 0.842525 13C1.05813 13 1.27374 12.9175 1.43798 12.7532L6.49992 7.69104L11.562 12.7532C11.7263 12.9175 11.9419 13 12.1575 13C12.3731 13 12.5887 12.9175 12.7529 12.7532C13.0824 12.424 13.0824 11.8916 12.7529 11.5623L7.69099 6.5001Z" fill="#7E839A" />
+                </svg>
+            </div>
+            <div class="modal__header">Оставьте заявку</div>
+            <div class="modal__subheader">Заполните заявку, сообщите наименование товара/груза и наш специалист свяжется с Вами в рабочее время.</div>
+            <form action="" class="modal-request__form">
+                <div class="modal-request__elem big">
+                    <label for="modal-request__name" class="modal__label">Имя:</label>
+                    <input placeholder="Ваше имя *" required type="text" class="modal-request__input input" id="modal-request__name" name="name">
+                </div>
+                <div class="modal-request__elem">
+                    <label for="modal-request__phone" class="modal__label">Номер телефона:</label>
+                    <input placeholder="+7 (___) ___ - __ - __ *" required type="tel" class="modal-request__input input" id="modal-request__phone" name="phone">
+                </div>
+                <div class="modal-request__elem">
+                    <label for="email" class="modal__label">Email:</label>
+                    <input placeholder="Введите e-mail *" required type="email" class="modal-request__input input" id="modal-request__email" name="email">
+                </div>
+                <div class="modal-request__elem big">
+                    <label for="modal-request__textarea" class="modal__label">Примечание:</label>
+                    <textarea placeholder="Сообщите здесь наименование товара/груза, количество или примерный вес, а так же укажите вопросы которые вас интересуют *" required name="comment" id="modal-request__textarea" class="modal-request__textarea input"></textarea>
+                    <div class="modal-request__hint">* - обязательные поля</div>
+                </div>
+                <div class="modal-request__elem big">
+                    <button class="modal-request__btn btn fz-16 btn_arrow">Рассчитать 
+                        <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.421875 13.5C0.421875 6.27539 6.27539 0.421875 13.5 0.421875C20.7246 0.421875 26.5781 6.27539 26.5781 13.5C26.5781 20.7246 20.7246 26.5781 13.5 26.5781C6.27539 26.5781 0.421875 20.7246 0.421875 13.5ZM13.5 24.8906C19.7596 24.8906 24.8906 19.8229 24.8906 13.5C24.8906 7.24043 19.8229 2.10938 13.5 2.10938C7.24043 2.10938 2.10938 7.17715 2.10938 13.5C2.10938 19.7596 7.17715 24.8906 13.5 24.8906ZM14.1592 20.0127L20.2289 13.9482C20.4768 13.7004 20.4768 13.2996 20.2289 13.0518L14.1592 6.9873C13.9113 6.73945 13.5105 6.73945 13.2627 6.9873L12.8988 7.35117C12.651 7.59902 12.651 8.01035 12.9094 8.25293L17.4182 12.6035H7.38281C7.03477 12.6035 6.75 12.8883 6.75 13.2363V13.7637C6.75 14.1117 7.03477 14.3965 7.38281 14.3965H17.4182L12.9041 18.7471C12.651 18.9949 12.6457 19.401 12.8936 19.6488L13.2574 20.0127C13.5105 20.2605 13.9113 20.2605 14.1592 20.0127Z" fill="#B26519" />
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="modal-menu">
+            <div class="modal-menu__link-wrapper">
+                <a href="#delivery" class="modal-menu__link">Цены и сроки</a>
+                <a href="#services" class="modal-menu__link">Услуги</a>
+                <a href="#about" class="modal-menu__link">О компании</a>
+                <a href="#" class="modal-menu__link">Контакты</a>
+                <a href="#reg" class="modal-menu__link">Оформить груз</a>
+            </div>
+            <button class="modal-menu__btn btn fz-16 btn_arrow">Оставить заявку
+                <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.421875 13.5C0.421875 6.27539 6.27539 0.421875 13.5 0.421875C20.7246 0.421875 26.5781 6.27539 26.5781 13.5C26.5781 20.7246 20.7246 26.5781 13.5 26.5781C6.27539 26.5781 0.421875 20.7246 0.421875 13.5ZM13.5 24.8906C19.7596 24.8906 24.8906 19.8229 24.8906 13.5C24.8906 7.24043 19.8229 2.10938 13.5 2.10938C7.24043 2.10938 2.10938 7.17715 2.10938 13.5C2.10938 19.7596 7.17715 24.8906 13.5 24.8906ZM14.1592 20.0127L20.2289 13.9482C20.4768 13.7004 20.4768 13.2996 20.2289 13.0518L14.1592 6.9873C13.9113 6.73945 13.5105 6.73945 13.2627 6.9873L12.8988 7.35117C12.651 7.59902 12.651 8.01035 12.9094 8.25293L17.4182 12.6035H7.38281C7.03477 12.6035 6.75 12.8883 6.75 13.2363V13.7637C6.75 14.1117 7.03477 14.3965 7.38281 14.3965H17.4182L12.9041 18.7471C12.651 18.9949 12.6457 19.401 12.8936 19.6488L13.2574 20.0127C13.5105 20.2605 13.9113 20.2605 14.1592 20.0127Z" fill="#B26519" />
+                </svg>
+            </button>
+        </div>
+    </div>
 </body>
 </html>

@@ -24,6 +24,7 @@
         position: relative
         --on-screen-slides: 3
         --number-of-slides: 4
+        --fake-slides: 0
         --slide-width: 360px
         --slide-gap: 30px
         --arrow-gap: -91px
@@ -32,7 +33,8 @@
         width: 100%
         padding: 40px 0
     &__field
-        width: calc((var(--slide-width) + var(--slide-gap)) * var(--number-of-slides) - var(--slide-gap) )
+        width: calc((var(--slide-width) + var(--slide-gap)) * (var(--number-of-slides) + var(--fake-slides) * 2) - var(--slide-gap) )
+        transition: all 0.5s
         display: flex
         justify-content: space-between
     &__slide

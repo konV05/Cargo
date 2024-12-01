@@ -15,10 +15,10 @@
                     <a href="#delivery" class="header__link">Цены и сроки</a>
                     <a href="#services" class="header__link">Услуги</a>
                     <a href="#about" class="header__link">О компании</a>
-                    <a href="#" class="header__link">Контакты</a>
+                    <a href="#footer" class="header__link">Контакты</a>
                     <a href="#reg" class="header__link">Оформить груз</a>
                 </div>
-                <button class="header__btn btn fz-15">Оставить заявку</button>
+                <button class="header__btn btn fz-15 request-open-btn">Оставить заявку</button>
                 <div class="header__hamburger">
                     <span></span>
                     <span></span>
@@ -28,7 +28,7 @@
         </div>
     </nav>
 
-    <section class="promo">
+    <section class="promo section">
         <div class="promo__window">
             <div class="promo__prev-arrow">
                 <svg width="24" height="42" viewBox="0 0 24 42" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -105,7 +105,7 @@
         </div>
     </section>
 
-    <section class="calc step-1">
+    <section class="calc step-1 section_margin">
         <div class="container">
                 <div class="title">Получить рассчет стоимости<br>доставки вашего груза</div>
                 <form action="" class="calc__form">
@@ -369,7 +369,7 @@
                             </div>
                             <div class="delivery__price"><span class="from">от</span> <span class="number">2,5</span><span class="dollar">$/кг</span></div>
                             <div class="delivery__btn-wrapper">
-                                <button class="delivery__btn btn fz-15">Оставить заявку</button>
+                                <button class="delivery__btn btn fz-15 request-open-btn">Оставить заявку</button>
                                 <button class="delivery__btn btn fz-15 transparent">Подробнее</button>
                             </div>
                         </div>
@@ -388,7 +388,7 @@
                             </div>
                             <div class="delivery__price"><span class="from">от</span> <span class="number">2,5</span><span class="dollar">$/кг</span></div>
                             <div class="delivery__btn-wrapper">
-                                <button class="delivery__btn btn fz-15">Оставить заявку</button>
+                                <button class="delivery__btn btn fz-15 request-open-btn">Оставить заявку</button>
                                 <button class="delivery__btn btn fz-15 transparent">Подробнее</button>
                             </div>
                         </div>
@@ -407,7 +407,7 @@
                             </div>
                             <div class="delivery__price"><span class="from">от</span> <span class="number">2,5</span><span class="dollar">$/кг</span></div>
                             <div class="delivery__btn-wrapper">
-                                <button class="delivery__btn btn fz-15">Оставить заявку</button>
+                                <button class="delivery__btn btn fz-15 request-open-btn">Оставить заявку</button>
                                 <button class="delivery__btn btn fz-15 transparent">Подробнее</button>
                             </div>
                         </div>
@@ -426,7 +426,7 @@
                             </div>
                             <div class="delivery__price"><span class="from">от</span> <span class="number">2,5</span><span class="dollar">$/кг</span></div>
                             <div class="delivery__btn-wrapper">
-                                <button class="delivery__btn btn fz-15">Оставить заявку</button>
+                                <button class="delivery__btn btn fz-15 request-open-btn">Оставить заявку</button>
                                 <button class="delivery__btn btn fz-15 transparent">Подробнее</button>
                             </div>
                         </div>
@@ -445,7 +445,7 @@
                             </div>
                             <div class="delivery__price"><span class="from">от</span> <span class="number">2,5</span><span class="dollar">$/кг</span></div>
                             <div class="delivery__btn-wrapper">
-                                <button class="delivery__btn btn fz-15">Оставить заявку</button>
+                                <button class="delivery__btn btn fz-15 request-open-btn">Оставить заявку</button>
                                 <button class="delivery__btn btn fz-15 transparent">Подробнее</button>
                             </div>
                         </div>
@@ -510,7 +510,7 @@
         </div>
     </section>
 
-    <section class="about" id="about">
+    <section class="about section_margin" id="about">
         <div class="container">
             <div class="about__wrapper">
                 <div class="about__text-block">
@@ -631,7 +631,7 @@
         </div>
     </section>
 
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="container">
             <div class="footer__wrapper">
                 <div class="footer__info">
@@ -696,32 +696,30 @@
             <form action="" class="modal-calc__form">
                 <div class="modal-calc__elem">
                     <label for="modal-calc__unit" class="modal__label">Единица измеренчя:</label>
-                    <select name="unit" id="modal-calc__unit" class="input modal-calc__select">
-                        <option selected value="1">метр</option>
-                        <option value="0,01">сантиметр</option>
-                        <option value="0,0254">дюйм</option>
-                        <option value="0,3048">фут</option>
+                    <select name="unit" id="modal-calc__unit" class="input modal-calc__select modal-calc__input">
+                        <option value="1">метр</option>
+                        <option value="0.01">сантиметр</option>
+                        <option value="0.0254">дюйм</option>
+                        <option value="0.3048">фут</option>
                     </select>
                 </div>
                 <div class="modal-calc__elem">
-                    <label for="" class="modal__label">Длина:</label>
-                    <input type="number" class="input modal-calc__input">
+                    <label for="modal-calc_length" class="modal__label">Длина:</label>
+                    <input required type="number" name="length" class="input modal-calc__input" id="modal-calc_length">
                 </div>
                 <div class="modal-calc__elem">
-                    <label for="" class="modal__label">Ширина:</label>
-                    <input type="number" class="input modal-calc__input">
+                    <label for="modal-calc_width" class="modal__label">Ширина:</label>
+                    <input required type="number" name="width" class="input modal-calc__input" id="modal-calc_width">
                 </div>
                 <div class="modal-calc__elem">
-                    <label for="" class="modal__label">Высота:</label>
-                    <input type="number" class="input modal-calc__input">
+                    <label for="modal-calc_height" class="modal__label">Высота:</label>
+                    <input required type="number" name="height" class="input modal-calc__input" id="modal-calc_height">
                 </div>
-                <div class="modal-calc__elem">
-                    <button class="modal-calc__btn btn fz-16 btn_arrow">Рассчитать 
-                        <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0.421875 13.5C0.421875 6.27539 6.27539 0.421875 13.5 0.421875C20.7246 0.421875 26.5781 6.27539 26.5781 13.5C26.5781 20.7246 20.7246 26.5781 13.5 26.5781C6.27539 26.5781 0.421875 20.7246 0.421875 13.5ZM13.5 24.8906C19.7596 24.8906 24.8906 19.8229 24.8906 13.5C24.8906 7.24043 19.8229 2.10938 13.5 2.10938C7.24043 2.10938 2.10938 7.17715 2.10938 13.5C2.10938 19.7596 7.17715 24.8906 13.5 24.8906ZM14.1592 20.0127L20.2289 13.9482C20.4768 13.7004 20.4768 13.2996 20.2289 13.0518L14.1592 6.9873C13.9113 6.73945 13.5105 6.73945 13.2627 6.9873L12.8988 7.35117C12.651 7.59902 12.651 8.01035 12.9094 8.25293L17.4182 12.6035H7.38281C7.03477 12.6035 6.75 12.8883 6.75 13.2363V13.7637C6.75 14.1117 7.03477 14.3965 7.38281 14.3965H17.4182L12.9041 18.7471C12.651 18.9949 12.6457 19.401 12.8936 19.6488L13.2574 20.0127C13.5105 20.2605 13.9113 20.2605 14.1592 20.0127Z" fill="#B26519" />
-                        </svg>
-                    </button>
-                </div>
+                <button class="modal-calc__btn btn fz-16 btn_arrow">Рассчитать 
+                    <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.421875 13.5C0.421875 6.27539 6.27539 0.421875 13.5 0.421875C20.7246 0.421875 26.5781 6.27539 26.5781 13.5C26.5781 20.7246 20.7246 26.5781 13.5 26.5781C6.27539 26.5781 0.421875 20.7246 0.421875 13.5ZM13.5 24.8906C19.7596 24.8906 24.8906 19.8229 24.8906 13.5C24.8906 7.24043 19.8229 2.10938 13.5 2.10938C7.24043 2.10938 2.10938 7.17715 2.10938 13.5C2.10938 19.7596 7.17715 24.8906 13.5 24.8906ZM14.1592 20.0127L20.2289 13.9482C20.4768 13.7004 20.4768 13.2996 20.2289 13.0518L14.1592 6.9873C13.9113 6.73945 13.5105 6.73945 13.2627 6.9873L12.8988 7.35117C12.651 7.59902 12.651 8.01035 12.9094 8.25293L17.4182 12.6035H7.38281C7.03477 12.6035 6.75 12.8883 6.75 13.2363V13.7637C6.75 14.1117 7.03477 14.3965 7.38281 14.3965H17.4182L12.9041 18.7471C12.651 18.9949 12.6457 19.401 12.8936 19.6488L13.2574 20.0127C13.5105 20.2605 13.9113 20.2605 14.1592 20.0127Z" fill="#B26519" />
+                    </svg>
+                </button>
             </form>
         </div>
         <div class="modal-request">
@@ -764,10 +762,10 @@
                 <a href="#delivery" class="modal-menu__link">Цены и сроки</a>
                 <a href="#services" class="modal-menu__link">Услуги</a>
                 <a href="#about" class="modal-menu__link">О компании</a>
-                <a href="#" class="modal-menu__link">Контакты</a>
+                <a href="#footer" class="modal-menu__link">Контакты</a>
                 <a href="#reg" class="modal-menu__link">Оформить груз</a>
             </div>
-            <button class="modal-menu__btn btn fz-16 btn_arrow">Оставить заявку
+            <button class="modal-menu__btn btn fz-16 btn_arrow request-open-btn">Оставить заявку
                 <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0.421875 13.5C0.421875 6.27539 6.27539 0.421875 13.5 0.421875C20.7246 0.421875 26.5781 6.27539 26.5781 13.5C26.5781 20.7246 20.7246 26.5781 13.5 26.5781C6.27539 26.5781 0.421875 20.7246 0.421875 13.5ZM13.5 24.8906C19.7596 24.8906 24.8906 19.8229 24.8906 13.5C24.8906 7.24043 19.8229 2.10938 13.5 2.10938C7.24043 2.10938 2.10938 7.17715 2.10938 13.5C2.10938 19.7596 7.17715 24.8906 13.5 24.8906ZM14.1592 20.0127L20.2289 13.9482C20.4768 13.7004 20.4768 13.2996 20.2289 13.0518L14.1592 6.9873C13.9113 6.73945 13.5105 6.73945 13.2627 6.9873L12.8988 7.35117C12.651 7.59902 12.651 8.01035 12.9094 8.25293L17.4182 12.6035H7.38281C7.03477 12.6035 6.75 12.8883 6.75 13.2363V13.7637C6.75 14.1117 7.03477 14.3965 7.38281 14.3965H17.4182L12.9041 18.7471C12.651 18.9949 12.6457 19.401 12.8936 19.6488L13.2574 20.0127C13.5105 20.2605 13.9113 20.2605 14.1592 20.0127Z" fill="#B26519" />
                 </svg>
@@ -775,6 +773,6 @@
         </div>
     </div>
 
-    <script src="js/index.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

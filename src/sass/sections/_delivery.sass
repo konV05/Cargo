@@ -1,22 +1,24 @@
 .delivery
     min-height: 597px
     margin-bottom: 100px
-    --on-screen-slides: 3
-    --number-of-slides: 5
-    --slide-width: 360px
-    --slide-gap: 30px
-    --arrow-gap: -91px
     &__slider
         width: calc( (var(--slide-width) + var(--slide-gap)) * var(--on-screen-slides) - var(--slide-gap) )
         position: relative
+        --on-screen-slides: 3
+        --number-of-slides: 5
+        --fake-slides: 0
+        --slide-width: 360px
+        --slide-gap: 30px
+        --arrow-gap: -91px
     &__window
         overflow: hidden
         width: 100%
         margin-bottom: 20px
     &__field
-        width: calc((var(--slide-width) + var(--slide-gap)) * var(--number-of-slides) - var(--slide-gap) )
+        width: calc((var(--slide-width) + var(--slide-gap)) * (var(--number-of-slides) + var(--fake-slides) * 2) - var(--slide-gap) )
         display: flex
         justify-content: space-between
+        transition: all 0.5s
     &__slide
         width: var(--slide-width)
         background-color: var(--local-dark-grey)

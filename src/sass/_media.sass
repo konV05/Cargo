@@ -63,7 +63,7 @@
                 height: 190px
     .reg
         &__grid
-            grid-template-columns: repeat(2, 435px)
+            grid-template-columns: repeat(2, 425px)
             grid-template-rows: 535px 406px
         &__text:last-child
             padding: 0
@@ -76,8 +76,10 @@
                 width: 160px
 
 @media (max-width: 992px)
-    body
-        padding: 0 35px
+    .section
+        margin: 0 35px
+        &_margin
+        margin: 0 35px
     .container
         max-width: 720px
     .header
@@ -322,3 +324,10 @@
             text-align: center
         &__media-wrapper
             margin: 0 auto
+    .modal
+        &-menu
+            top: 89px
+            border-radius: 0
+            &__btn
+                display: flex
+            

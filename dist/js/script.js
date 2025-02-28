@@ -62,6 +62,139 @@ function calc() {
 
 /***/ }),
 
+/***/ "./src/js/modules/dragAndDrop.js":
+/*!***************************************!*\
+  !*** ./src/js/modules/dragAndDrop.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function dragAndDrop() {
+  const dragArea = document.querySelector('.calc__droparea'),
+    dragAreaLable = document.querySelector('.calc__droparea-file'),
+    deleteBtn = document.querySelector('.calc__droparea-delete');
+  let files = null;
+  dragArea.addEventListener('dragenter', () => {
+    dragArea.classList.add('drag');
+  });
+  dragArea.addEventListener('dragleave', () => {
+    dragArea.classList.remove('drag');
+  });
+  dragArea.addEventListener('dragover', e => {
+    e.preventDefault();
+  });
+  dragArea.addEventListener('drop', e => {
+    e.preventDefault();
+    files = e.dataTransfer.files;
+    window.calcFiles = e.dataTransfer.files;
+    dragArea.classList.remove('drag');
+    console.log(files);
+    const checkType = Array.from(files).every(elem => {
+      return elem.type.search('image/') === 0;
+    });
+    const checkNumber = files.length <= 5;
+    const checkWeight = () => {
+      let weight = 0;
+      Array.from(files).forEach(item => {
+        weight += item.size;
+      });
+      return weight <= 10485760; // 10485760 = 10 mb
+    };
+    if (checkType && checkNumber && checkWeight()) {
+      dragArea.classList.add('active');
+      dragAreaLable.classList.remove('invalid');
+      if (files.length === 1) {
+        dragAreaLable.textContent = transformName(files[0].name);
+      } else if (files.length > 1 && files.length <= 5) {
+        dragAreaLable.textContent = `Выбрано: ${files.length} фото`;
+      }
+    } else {
+      dragArea.classList.add('invalid');
+      dragAreaLable.classList.add('invalid');
+      let errorMessage = 'Ошибка: Неправильный';
+      if (!checkType) {
+        errorMessage += ' Тип,';
+      }
+      if (!checkNumber) {
+        errorMessage += ' Кол-во,';
+      }
+      if (!checkWeight()) {
+        errorMessage += ' Вес,';
+      }
+      dragAreaLable.textContent = errorMessage.slice(0, -1) + ' файлов';
+    }
+  });
+  function transformName(name) {
+    if (name.length <= 40) return name;else {
+      const lastDotIndex = name.lastIndexOf('.');
+      const firstPart = name.slice(0, 10);
+      const secondPart = name.slice(lastDotIndex - 3, lastDotIndex);
+      const typePart = name.slice(lastDotIndex + 1);
+      return `${firstPart}...${secondPart}.${typePart}`;
+    }
+  }
+  deleteBtn.addEventListener('click', () => {
+    files = null;
+    dragAreaLable.textContent = '';
+    dragArea.classList.remove('invalid');
+    dragArea.classList.remove('active');
+    dragAreaLable.classList.remove('invalid');
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dragAndDrop);
+
+/***/ }),
+
+/***/ "./src/js/modules/form.js":
+/*!********************************!*\
+  !*** ./src/js/modules/form.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function form() {
+  const section = document.querySelector('.calc'),
+    formElem = document.querySelector('.calc__form'),
+    dragArea = formElem.querySelector('.calc__droparea'),
+    dragAreaLable = formElem.querySelector('.calc__droparea-file'),
+    inputStep1 = formElem.querySelectorAll('.calc__input.step-1'),
+    nextStepBtn = formElem.querySelector('.calc__btn.step-1'),
+    prevStepBtn = formElem.querySelector('.calc__btn-small.prev-step');
+  inputStep1.forEach(i => {
+    i.addEventListener('input', () => {
+      i.classList.remove('invalid');
+    });
+  });
+  nextStepBtn.addEventListener('click', e => {
+    e.preventDefault();
+    let invalidCounter = 0;
+    inputStep1.forEach(item => {
+      if (item.value == false) {
+        invalidCounter++;
+        item.classList.add('invalid');
+      }
+    });
+    if (invalidCounter === 0) {
+      section.classList.remove('step-1');
+      section.classList.add('step-2');
+    }
+  });
+  prevStepBtn.addEventListener('click', e => {
+    e.preventDefault();
+    section.classList.remove('step-2');
+    section.classList.add('step-1');
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (form);
+
+/***/ }),
+
 /***/ "./src/js/modules/menu.js":
 /*!********************************!*\
   !*** ./src/js/modules/menu.js ***!
@@ -203,6 +336,53 @@ function modal({
 
 /***/ }),
 
+/***/ "./src/js/modules/promoSlider.js":
+/*!***************************************!*\
+  !*** ./src/js/modules/promoSlider.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function promoSlider() {
+  const slider = document.querySelector('.promo__window'),
+    slides = slider.querySelectorAll('.promo__slide'),
+    prevArrow = slider.querySelector('.promo__prev-arrow'),
+    nextArrow = slider.querySelector('.promo__next-arrow');
+  let index = 0;
+  let moving = false;
+  function updateSlider() {
+    moving = true;
+    if (index >= slides.length) {
+      index = 0;
+    } else if (index < 0) {
+      index = slides.length - 1;
+    }
+    slider.querySelector('.active_slide').classList.remove('active_slide');
+    slides[index].classList.add('active_slide');
+    window.setTimeout(() => {
+      moving = false;
+    }, 600);
+  }
+  prevArrow.addEventListener('click', () => {
+    if (!moving) {
+      index--;
+      updateSlider();
+    }
+  });
+  nextArrow.addEventListener('click', () => {
+    if (!moving) {
+      index++;
+      updateSlider();
+    }
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (promoSlider);
+
+/***/ }),
+
 /***/ "./src/js/modules/slider.js":
 /*!**********************************!*\
   !*** ./src/js/modules/slider.js ***!
@@ -219,12 +399,14 @@ function slider(sliderSectionSelector, animationTime) {
     nextArrow = slider.querySelector(sliderSectionSelector + '__next-arrow'),
     prevArrow = slider.querySelector(sliderSectionSelector + '__prev-arrow'),
     slides = slider.querySelectorAll(sliderSectionSelector + '__slide'),
+    dots = slider.querySelectorAll(sliderSectionSelector + '__dots'),
     sliderStyle = window.getComputedStyle(slider, null);
-  let sliderIndex = 1,
+  let sliderIndex = Math.floor(sliderStyle.getPropertyValue('--on-screen-slides') / 2),
     slideWidth = +sliderStyle.getPropertyValue('--slide-width').replace(/px/, '') + +sliderStyle.getPropertyValue('--slide-gap').replace(/px/, ''),
     fakeSlides = Math.floor(sliderStyle.getPropertyValue('--on-screen-slides') / 2) + 1,
     moving = false;
-  function createFakeSlides() {
+  (function () {
+    //createFakeSlides
     slider.style.setProperty('--fake-slides', `${fakeSlides}`);
     for (let i = 0; i < fakeSlides; i++) {
       const fakeSlide = document.createElement('div');
@@ -245,46 +427,58 @@ function slider(sliderSectionSelector, animationTime) {
       field.prepend(fakeSlide);
       field.style.transform = `translateX(${slideWidth * fakeSlides * -1}px)`;
     }
+  })();
+  dots[sliderIndex].classList.add('active');
+  function changeActiveDot() {
+    slider.querySelector('.active' + sliderSectionSelector + '__dots').classList.remove('active');
+    dots[sliderIndex].classList.add('active');
   }
-  createFakeSlides();
   function nextSlide() {
     if (!moving) {
       moving = true;
       sliderIndex++;
-      field.style.transform = `translateX(${(sliderIndex + fakeSlides - 1) * slideWidth * -1}px)`;
+      field.style.transform = `translateX(${(sliderIndex + 1) * slideWidth * -1}px)`;
       if (sliderIndex > slides.length - 1) {
+        sliderIndex = 0;
+        changeActiveDot();
         window.setTimeout(() => {
           field.style.transition = 'unset';
-          sliderIndex = 0;
-          field.style.transform = `translateX(${(sliderIndex + fakeSlides - 1) * slideWidth * -1}px)`;
+          field.style.transform = `translateX(${(sliderIndex + 1) * slideWidth * -1}px)`;
           window.setTimeout(() => {
             field.style.transition = '';
+            moving = false;
           }, 2);
-        }, animationTime);
+        }, animationTime + 50);
+      } else {
+        changeActiveDot();
+        window.setTimeout(() => {
+          moving = false;
+        }, animationTime + 50);
       }
-      window.setTimeout(() => {
-        moving = false;
-      }, animationTime + 10);
     }
   }
   function prevSlide() {
     if (!moving) {
       moving = true;
       sliderIndex--;
-      field.style.transform = `translateX(${(sliderIndex + fakeSlides - 1) * slideWidth * -1}px)`;
+      field.style.transform = `translateX(${(sliderIndex + 1) * slideWidth * -1}px)`;
       if (sliderIndex < 0) {
+        sliderIndex = slides.length - 1;
+        changeActiveDot();
         window.setTimeout(() => {
           field.style.transition = 'unset';
-          sliderIndex = slides.length - 1;
-          field.style.transform = `translateX(${(sliderIndex + fakeSlides - 1) * slideWidth * -1}px)`;
+          field.style.transform = `translateX(${(sliderIndex + 1) * slideWidth * -1}px)`;
           window.setTimeout(() => {
             field.style.transition = '';
+            moving = false;
           }, 2);
-        }, animationTime);
+        }, animationTime + 50);
+      } else {
+        changeActiveDot();
+        window.setTimeout(() => {
+          moving = false;
+        }, animationTime + 50);
       }
-      window.setTimeout(() => {
-        moving = false;
-      }, animationTime + 10);
     }
   }
   nextArrow.addEventListener('click', () => {
@@ -292,6 +486,26 @@ function slider(sliderSectionSelector, animationTime) {
   });
   prevArrow.addEventListener('click', () => {
     prevSlide();
+  });
+  let touchstartX = 0;
+  let touchendX = 0;
+  slider.addEventListener('touchstart', e => {
+    touchstartX = e.changedTouches[0].screenX;
+  });
+  slider.addEventListener('touchend', e => {
+    touchendX = e.changedTouches[0].screenX;
+    if (touchstartX < touchendX) {
+      prevSlide();
+    } else if (touchstartX > touchendX) {
+      nextSlide();
+    }
+  });
+  dots.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      sliderIndex = index;
+      field.style.transform = `translateX(${(sliderIndex + 1) * slideWidth * -1}px)`;
+      changeActiveDot();
+    });
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (slider);
@@ -366,6 +580,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_calc__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/calc */ "./src/js/modules/calc.js");
 /* harmony import */ var _modules_accordion__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/accordion */ "./src/js/modules/accordion.js");
 /* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
+/* harmony import */ var _modules_promoSlider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/promoSlider */ "./src/js/modules/promoSlider.js");
+/* harmony import */ var _modules_form__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/form */ "./src/js/modules/form.js");
+/* harmony import */ var _modules_dragAndDrop__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/dragAndDrop */ "./src/js/modules/dragAndDrop.js");
+
+
+
 
 
 
@@ -399,6 +619,9 @@ window.addEventListener('DOMContentLoaded', function () {
   });
   (0,_modules_slider__WEBPACK_IMPORTED_MODULE_4__["default"])('.delivery', 500);
   (0,_modules_slider__WEBPACK_IMPORTED_MODULE_4__["default"])('.services', 500);
+  (0,_modules_promoSlider__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  (0,_modules_form__WEBPACK_IMPORTED_MODULE_6__["default"])();
+  (0,_modules_dragAndDrop__WEBPACK_IMPORTED_MODULE_7__["default"])();
 });
 })();
 

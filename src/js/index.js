@@ -5,6 +5,9 @@ import modal from './modules/modal';
 import calc from './modules/calc';
 import accordion from './modules/accordion';
 import slider from './modules/slider';
+import promoSlider from './modules/promoSlider';
+import form from './modules/form';
+import dragAndDrop from './modules/dragAndDrop';
 
 window.addEventListener('DOMContentLoaded', function () {
     menu({
@@ -34,6 +37,12 @@ window.addEventListener('DOMContentLoaded', function () {
         itemSelector: '.faq__elem'
     });
 
-    slider('.delivery', 500)
-    slider('.services', 500)
+    slider('.delivery', 500);
+    slider('.services', 500);
+
+    promoSlider();
+
+    form();
+
+    dragAndDrop();
 });

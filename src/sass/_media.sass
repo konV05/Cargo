@@ -109,6 +109,10 @@
         &__grid
             grid-template-columns: repeat(auto-fit, 212px)
     .delivery, .services
+        &__slider
+            --on-screen-slides: 1
+            padding: 0 50px
+            box-sizing: content-box
         &__prev-arrow
             display: none
         &__next-arrow
@@ -219,6 +223,7 @@
         padding-bottom: 25px
         margin-bottom: 45px
     .section
+        margin: 0
         border-radius: 0
     .header
         width: 100%
@@ -239,6 +244,8 @@
         &__descr
             font-size: 16px
     .calc
+        margin-right: 0
+        margin-left: 0
         & .title
             margin-bottom: 54px
             font-size: 24px
@@ -283,6 +290,8 @@
             display: flex
     .delivery, .services
         &__slider
+            padding: 0
+            box-sizing: border-box
             --slide-width: 335px
             --slide-gap: 20px
     .delivery__btn

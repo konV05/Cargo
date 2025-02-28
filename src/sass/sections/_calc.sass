@@ -37,7 +37,8 @@
         width: 100%
     &__field
         width: 200%
-        display: flex 
+        display: flex
+        transition: all .5s
     &__form
         background-color: var(--local-dark-grey)
         border-radius: 20px
@@ -83,6 +84,9 @@
     &__input
         grid-row: 2 / 3
         grid-column: 1 / 3
+        transition: all 0.3s
+        &.invalid
+            background-color: #f77d74
         &-wrapper
             display: grid
             grid-template-columns: repeat(2, auto)
@@ -140,13 +144,31 @@
             svg
                 opacity: 0
                 transition: all 0.2s 
-    &__dropbox
-        position: absolute
+    &__droparea
+        display: flex
+        align-items: center
+        justify-content: center
+        grid-column: 1 / 3
+        border: 1px dashed rgba(255, 255, 255, 0.26)
+        border-radius: 10px
         width: 100%
-        height: 43px
-        bottom: 0
-        opacity: 0
+        height: 100%
         cursor: pointer
+        transition: all .3s
+        &.invalid
+            background-color: #f77d74
+        &::before
+            content: 'Загрузить фото товара'
+            font-weight: 400
+            font-size: 15px
+            line-height: 126%
+            color: #fff
+        &.drag
+            border: 1px dashed rgba(255, 255, 255, 1)
+            background: var(--local-grey)
+        &.active
+            border: 1px dashed rgba(137, 194, 73, 1)
+            background: rgba(137, 194, 73, 0.3)
         &-wrapper
             grid-column: 1 / 3
             position: relative
@@ -155,24 +177,13 @@
             grid-template-rows: 14px 43px
             row-gap: 18px
             justify-content: space-between
-        &-label
-            grid-column: 1 / 3
-            border: 1px dashed rgba(255, 255, 255, 0.26)
-            border-radius: 10px
-            width: 100%
-            height: 100%
-            font-weight: 400
-            font-size: 15px
-            line-height: 126%
-            color: #fff
-            display: flex
-            align-items: center
-            justify-content: center
         &-file
             font-weight: 400
             font-size: 15px
             line-height: 126%
             color: #fff
+            &.invalid
+                color: #f77d74
         &-delete
             width: 84px
             font-weight: 400

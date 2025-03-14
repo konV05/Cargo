@@ -1,9 +1,14 @@
 function dragAndDrop() {
     const dragArea = document.querySelector('.calc__droparea'),
           dragAreaLable = document.querySelector('.calc__droparea-file'),
+          input = document.querySelector('.calc__droparea-input'),
           deleteBtn = document.querySelector('.calc__droparea-delete');
-    
-    let files = null;
+
+    // let input.files = input.files;
+
+    input.addEventListener('change', () => {
+        dataProcessing();
+    });
 
     dragArea.addEventListener('dragenter', () => {
         dragArea.classList.add('drag');
@@ -19,21 +24,25 @@ function dragAndDrop() {
 
     dragArea.addEventListener('drop', (e) => {
         e.preventDefault();
-        files = e.dataTransfer.files;
-        window.calcFiles = e.dataTransfer.files;
+        input.files = e.dataTransfer.files;
         dragArea.classList.remove('drag');
 
-        console.log(files);
-        
-        const checkType = Array.from(files).every((elem) => {
+        dataProcessing();
+    });
+
+    function dataProcessing() {
+
+        console.log(input.files)
+
+        const checkType = Array.from(input.files).every((elem) => {
             return elem.type.search('image/') === 0;
         });
 
-        const checkNumber = (files.length <= 5);
+        const checkNumber = (input.files.length <= 5);
 
         const checkWeight = () => {
             let weight = 0
-            Array.from(files).forEach((item) => {
+            Array.from(input.files).forEach((item) => {
                 weight += item.size
             });       
             return ( weight <= 10485760 ) // 10485760 = 10 mb
@@ -42,12 +51,13 @@ function dragAndDrop() {
         if (checkType && checkNumber && checkWeight()) {
             dragArea.classList.add('active');
             dragAreaLable.classList.remove('invalid');
-            if ( files.length === 1 ) {
-                dragAreaLable.textContent = transformName(files[0].name)
-            } else if ( files.length > 1 && files.length <= 5 ) {
-                dragAreaLable.textContent = `Выбрано: ${files.length} фото`;
+            if ( input.files.length === 1 ) {
+                dragAreaLable.textContent = transformName(input.files[0].name)
+            } else if ( input.files.length > 1 && input.files.length <= 5 ) {
+                dragAreaLable.textContent = `Выбрано: ${input.files.length} фото`;
             }
         } else {
+            dragArea.classList.remove('active');
             dragArea.classList.add('invalid');
             dragAreaLable.classList.add('invalid');
             let errorMessage = 'Ошибка: Неправильный'
@@ -62,7 +72,7 @@ function dragAndDrop() {
             }
             dragAreaLable.textContent = errorMessage.slice(0, -1) + ' файлов'
         }
-    });
+    } 
 
     function transformName(name) {
         if ( name.length <= 40 ) return name
@@ -76,7 +86,7 @@ function dragAndDrop() {
     }
 
     deleteBtn.addEventListener('click', () => {
-        files = null;
+        input.files = null;
         dragAreaLable.textContent = '';
         dragArea.classList.remove('invalid');
         dragArea.classList.remove('active');

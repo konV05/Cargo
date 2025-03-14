@@ -1,3 +1,14 @@
+@keyframes thanks-fade-in
+    0%
+        display: none
+        opacity: 0
+    1%
+        display: block
+        opacity: 0
+    100%
+        display: block
+        opacity: 100    
+    
 .calc
     padding-top: 58px
     min-height: 917px
@@ -23,6 +34,8 @@
             padding-top: 52px
             margin-bottom: 56px
         .calc-thanks
+            animation: thanks-fade-in .5s
+            opacity: 100
             display: block
     .container
         position: relative
@@ -194,6 +207,9 @@
             color: #e53535
             cursor: pointer
             text-align: right
+        &-input
+            opacity: 0
+            display: none
     &__textarea
         resize: none
         height: 147px

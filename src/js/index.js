@@ -10,6 +10,7 @@ import form from './modules/form';
 import dragAndDrop from './modules/dragAndDrop';
 
 window.addEventListener('DOMContentLoaded', function () {
+    
     menu({
         menuSelector: '.header',
         triggerBtnSelector: '.header__hamburger',
